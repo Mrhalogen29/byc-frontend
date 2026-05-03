@@ -1,3 +1,9 @@
+*,
+*::after,
+*::before {
+  font-family: "Jost", sans-serif;
+}
+
 .nav-logo {
   position: absolute;
   left: 50%;
@@ -7,4 +13,17 @@
 .nav-icon {
   width: 24px;
   height: 24px;
+}
+
+.nav-link {
+  color: black;
+  text-decoration: none;
+  padding: 6px 8px;
+}
+.nav-link:hover {
+  opacity: 0.8;
+}
+
+.nav-link:active {
+  text-decoration: underline;
 }

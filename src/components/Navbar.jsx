@@ -1,5 +1,9 @@
 import cart from "../assets/cart.png";
 import logo from "../assets/logo.png";
+import heart from "../assets/heart.png";
+import user from "../assets/user.png";
+import search from "../assets/search.png";
+import { Menu } from "lucide-react";
 
 function Navbar() {
   return (
@@ -16,48 +20,54 @@ function Navbar() {
           />
         </a>
         <ul className="list-unstyled d-flex justify-content-between align-items-center">
-          <div className=" d-flex justify-content-between align-items-center gap-3">
-            <li>
-              <a href="">Shop Products</a>
+          <div className="d-flex justify-content-between align-items-center gap-3">
+            <li className="d-xl-none">
+              <button className="btn">
+                <Menu />
+              </button>
             </li>
-            <li>
-              <a href="">Blog</a>
-            </li>
-            <li>
-              <a href="">FAQ</a>
-            </li>
+
+            <NavListItem title="Shop Products" />
+            <NavListItem title="Blog" />
+            <NavListItem title="FAQ" />
           </div>
           <div className=" d-flex justify-content-between align-items-center gap-3">
-            <li>
-              <a href="">About Us</a>
-            </li>
-            <li>
-              <a href="">Contact</a>
-            </li>
-            <li>
-              <button>
-                <img src="" alt="" />
-              </button>
-            </li>
-            <li>
-              <button>
-                <img src="" alt="" />
-              </button>
-            </li>
-            <li>
-              <button>
-                <img src="" alt="" />
-              </button>
-            </li>
-            <li>
-              <button className="btn">
-                <img src={cart} alt="cart icon" className="nav-icon" />
-              </button>
-            </li>
+            <NavListItem title="About Us" />
+
+            <NavListItem title="Contact" />
+
+            <NavListBtnItem src={search} alt="search icon" />
+            <NavListBtnItem src={user} alt="user icon" />
+            <NavListBtnItem src={heart} alt="heart icon" />
+            <NavListBtnItem
+              src={cart}
+              alt="cart icon"
+              showOnAllScreens={true}
+            />
           </div>
         </ul>
       </div>
     </nav>
+  );
+}
+
+function NavListItem({ title }) {
+  return (
+    <li className="d-none d-xl-block">
+      <a href="" className="nav-link ">
+        {title}
+      </a>
+    </li>
+  );
+}
+
+function NavListBtnItem({ src, alt, showOnAllScreens }) {
+  return (
+    <li className={showOnAllScreens ? "" : "d-none d-xl-block"}>
+      <button className="btn">
+        <img src={src} alt={alt} className="nav-icon" />
+      </button>
+    </li>
   );
 }
 
