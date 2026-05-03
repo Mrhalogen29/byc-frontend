@@ -27,3 +27,21 @@
 .nav-link:active {
   text-decoration: underline;
 }
+
+.solid-btn {
+  background-color: #000000;
+  font-weight: 600;
+  border: none;
+  box-shadow: none;
+  color: white;
+  padding: 6px 12px;
+}
+
+.outline-btn {
+  background-color: white;
+  font-weight: 600;
+  box-shadow: none;
+  border: 1px solid #000000;
+  color: #000000;
+  padding: 6px 12px;
+}
