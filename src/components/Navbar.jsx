@@ -9,15 +9,18 @@ import Sidebar from "./Sidebar";
 
 function Navbar() {
   const [showSearch, setShowSearch] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(false);
 
   function handleClick() {
     setShowSearch(!showSearch);
   }
 
-  // Using a state variable and event handler function, add functionality
-  // that will allow you to show the sidebar
-  // the sidebar component is shown
-  // when its first level element has a class of show
+  function handleShowSidebar() {
+    setShowSidebar(true);
+  }
+  function handleCloseSidebar() {
+    setShowSidebar(false);
+  }
 
   return (
     <>
@@ -42,7 +45,7 @@ function Navbar() {
           <ul className="list-unstyled d-flex justify-content-between align-items-center">
             <div className="d-flex justify-content-between align-items-center gap-3">
               <li className="d-xl-none">
-                <button className="btn">
+                <button className="btn" onClick={handleShowSidebar}>
                   <Menu />
                 </button>
               </li>
@@ -69,7 +72,7 @@ function Navbar() {
           </ul>
         </div>
       </nav>
-      <Sidebar />
+      <Sidebar showSidebar={showSidebar} handleClose={handleCloseSidebar} />
     </>
   );
 }
