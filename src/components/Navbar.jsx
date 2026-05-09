@@ -9,9 +9,15 @@ import Sidebar from "./Sidebar";
 
 function Navbar() {
   const [showSearch, setShowSearch] = useState(false);
+
   function handleClick() {
     setShowSearch(!showSearch);
   }
+
+  // Using a state variable and event handler function, add functionality
+  // that will allow you to show the sidebar
+  // the sidebar component is shown
+  // when its first level element has a class of show
 
   return (
     <>
