@@ -10,6 +10,12 @@
   transform: translateX(-50%);
 }
 
+.nav-logo-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .nav-icon {
   width: 24px;
   height: 24px;
@@ -28,10 +34,16 @@
   text-decoration: underline;
 }
 
+#hero .action-btn {
+  width: 235px;
+  padding: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
 .solid-btn {
   background-color: #000000;
   font-weight: 600;
-  border: none;
+  border: 1px solid #000000;
   box-shadow: none;
   color: white;
   padding: 6px 12px;
@@ -44,4 +56,30 @@
   border: 1px solid #000000;
   color: #000000;
   padding: 6px 12px;
+}
+.solid-btn:hover {
+  background-color: #000000d1;
+}
+
+.outline-btn:hover {
+  background-color: #00000015;
+}
+.action-btn:active {
+  transform: scale(0.99);
+}
+
+#hero h1 {
+  font-size: 56px;
+}
+
+@media (max-width: 767px) {
+  #hero h1 {
+    font-size: 42px;
+  }
+
+  #hero .action-btn {
+    width: 100%;
+    padding: 16px;
+    transition: all 0.2s ease-in-out;
+  }
 }
