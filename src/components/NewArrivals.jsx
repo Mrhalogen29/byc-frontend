@@ -39,11 +39,7 @@ function NewArrivals() {
         <div className="row">
           {newArrivalsList.map((item) => (
             <div className="col-md-6 col-lg-4" key={item.title}>
-              <NewArrivalsCard
-                image={item.image}
-                title={item.title}
-                description={item.description}
-              />
+              <NewArrivalsCard {...item} />
             </div>
           ))}
         </div>

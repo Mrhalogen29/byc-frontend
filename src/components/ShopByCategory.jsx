@@ -9,7 +9,7 @@ const categories = ["For Women", "For Men", "For Kids"];
 const subcategories = {
   "For Women": ["Panties", "Brassieres", "Camisoles", "Shapewear"],
   "For Men": ["T-Shirt", "Singlet", "Pants", "Boxers"],
-  "For Kids": ["Underwear Sets", "Vests", "Pyjamas"],
+  "For Kid": ["Underwear Sets", "Vests", "Pyjamas"],
 };
 
 const products = [
@@ -18,28 +18,28 @@ const products = [
     name: "WOMEN PANTS",
     sku: "BYC-501LMS",
     price: "₦4,500",
-    image: women1
+    image: women1,
   },
   {
     id: 2,
     name: "WOMEN PANTS",
     sku: "BYC-501LMS",
     price: "₦4,500",
-    image: women2
+    image: women2,
   },
   {
     id: 3,
     name: "WOMEN PANTS",
     sku: "BYC-501LMS",
     price: "₦5,000",
-    image: men1
-  }
+    image: men1,
+  },
 ];
 
 function ShopByCategory() {
   const [activeCategory, setActiveCategory] = useState(categories[1]);
   const [activeSubcategory, setActiveSubcategory] = useState(
-    subcategories[categories[1]][2]
+    subcategories[categories[1]][2],
   );
 
   return (
@@ -47,7 +47,7 @@ function ShopByCategory() {
       <div className="container">
         <div className="text-center mb-5">
           <h2 className="mb-5 fw-semibold fs-2">Shop By Category</h2>
-          
+
           <div className="category-tabs d-flex justify-content-center gap-4 mb-4">
             {categories.map((cat) => (
               <button
@@ -77,7 +77,10 @@ function ShopByCategory() {
           </div>
         </div>
 
-        <div className="category-content animate-fade-in" key={activeCategory + activeSubcategory}>
+        <div
+          className="category-content animate-fade-in"
+          key={activeCategory + activeSubcategory}
+        >
           <div className="row">
             {products.map((product) => (
               <div className="col-sm-6 col-lg-4 mb-4" key={product.id}>
@@ -88,18 +91,21 @@ function ShopByCategory() {
                   <div className="product-info">
                     <div className="d-flex align-items-center gap-2">
                       <span className="fw-semibold">{product.name}</span>
-                      <span className="text-muted" style={{fontSize: "0.9rem"}}>{product.sku}</span>
+                      <span
+                        className="text-muted"
+                        style={{ fontSize: "0.9rem" }}
+                      >
+                        {product.sku}
+                      </span>
                     </div>
-                    <div className="mt-1">
-                      {product.price}
-                    </div>
+                    <div className="mt-1">{product.price}</div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
-           <div className="d-flex justify-content-center mt-5">
+        <div className="d-flex justify-content-center mt-5">
           <Button variant="outline-btn">View All</Button>
         </div>
       </div>
