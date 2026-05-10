@@ -1,6 +1,7 @@
 import menUnderwears from "../assets/new-arrivals/men-underwears.png";
 import womenUnderwears from "../assets/new-arrivals/women-underwears.png";
 import underwears from "../assets/new-arrivals/underwears.png";
+import Button from "./Button";
 
 const newArrivalsList = [
   {
@@ -30,7 +31,7 @@ const newArrivalsList = [
 
 function NewArrivals() {
   return (
-    <section>
+    <section className="py-5 mb-5">
       <div className="container">
         <h2 className="mb-5 fs-2 fw-semibold text-center">
           Checkout BYC New Arrivals
@@ -45,6 +46,9 @@ function NewArrivals() {
               />
             </div>
           ))}
+        </div>
+        <div className="d-flex justify-content-center mt-5">
+          <Button variant="outline-btn">View All</Button>
         </div>
       </div>
     </section>

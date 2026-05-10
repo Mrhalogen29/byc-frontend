@@ -103,7 +103,14 @@ function SearchBar() {
       type="search"
       name="search"
       id=""
-      className="border-none border-bottom border-black"
+      style={{
+        maxWidth: 250,
+        width: "calc(180px + 5vw)",
+        outline: "0px",
+        border: 0,
+        borderBottom: "1px solid black",
+      }}
+      className="shadow-none"
     />
   );
 }
