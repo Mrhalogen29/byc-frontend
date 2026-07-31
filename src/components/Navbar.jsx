@@ -51,7 +51,7 @@ function Navbar() {
               </li>
 
               <NavListItem title="Shop Products" />
-              <NavListItem title="Blog" />
+              <NavListItem title="Blog" href="#blog" />
               <NavListItem title="FAQ" />
             </div>
             <div className=" d-flex justify-content-between align-items-center gap-3">
@@ -77,10 +77,10 @@ function Navbar() {
   );
 }
 
-function NavListItem({ title }) {
+function NavListItem({ title, href }) {
   return (
     <li className="d-none d-xl-block">
-      <a href="" className="nav-link ">
+      <a href={href} className="nav-link ">
         {title}
       </a>
     </li>
