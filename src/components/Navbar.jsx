@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import cart from "../assets/cart.png";
 import logo from "../assets/logo.png";
 import heart from "../assets/heart.png";
@@ -50,14 +51,14 @@ function Navbar() {
                 </button>
               </li>
 
-              <NavListItem title="Shop Products" />
-              <NavListItem title="Blog" href="#blog" />
+              <NavListItem title="Shop Products" to="/" />
+              <NavListItem title="Blog" to="/blog" />
               <NavListItem title="FAQ" />
             </div>
             <div className=" d-flex justify-content-between align-items-center gap-3">
-              <NavListItem title="About Us" />
+              <NavListItem title="About Us" to="/about" />
 
-              <NavListItem title="Contact" />
+              <NavListItem title="Contact" to="/contact" />
 
               <NavListBtnItem
                 src={search}
@@ -65,9 +66,9 @@ function Navbar() {
                 showOnAllScreens={true}
                 onClick={handleClick}
               />
-              <NavListBtnItem src={user} alt="user icon" />
+              <NavListBtnItem src={user} alt="user icon" to="/login" />
               <NavListBtnItem src={heart} alt="heart icon" />
-              <NavListBtnItem src={cart} alt="cart icon" />
+              <NavListBtnItem src={cart} alt="cart icon" to="/cart" />
             </div>
           </ul>
         </div>
@@ -77,22 +78,34 @@ function Navbar() {
   );
 }
 
-function NavListItem({ title, href }) {
+function NavListItem({ title, href, to }) {
   return (
     <li className="d-none d-xl-block">
-      <a href={href} className="nav-link ">
-        {title}
-      </a>
+      {to ? (
+        <Link to={to} className="nav-link ">
+          {title}
+        </Link>
+      ) : (
+        <a href={href} className="nav-link ">
+          {title}
+        </a>
+      )}
     </li>
   );
 }
 
-function NavListBtnItem({ src, alt, showOnAllScreens, onClick }) {
+function NavListBtnItem({ src, alt, showOnAllScreens, onClick, to }) {
   return (
     <li className={showOnAllScreens ? "" : "d-none d-xl-block"}>
-      <button className="btn" onClick={onClick}>
-        <img src={src} alt={alt} className="nav-icon" />
-      </button>
+      {to ? (
+        <Link to={to} className="btn">
+          <img src={src} alt={alt} className="nav-icon" />
+        </Link>
+      ) : (
+        <button className="btn" onClick={onClick}>
+          <img src={src} alt={alt} className="nav-icon" />
+        </button>
+      )}
     </li>
   );
 }
