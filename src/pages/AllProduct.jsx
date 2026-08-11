@@ -6,7 +6,7 @@ import Form from "react-bootstrap/Form";
 import { getProducts } from "../services/productService";
 import { addToCart } from "../services/cartService";
 
-import productImage from "../assets/all-product/Camisole.png";
+import productImage from "../assets/all-product/camisole.png";
 import boxersImage from "../assets/all-product/boxer.png";
 import boxersImage2 from "../assets/all-product/boxer2.png";
 import boxersImage3 from "../assets/all-product/boxer3.png";
