@@ -34,7 +34,12 @@ function Login() {
       localStorage.setItem("token", response.access_token);
       localStorage.setItem("user", JSON.stringify(response.user));
       alert("Login successful");
-      navigate("/");
+
+      if (response.user.role === "admin") {
+        navigate("/admin/dashboard");
+      } else {
+        navigate("/");
+      }
     } catch (error) {
       setError(error.response?.data?.message || "invalid email or password");
     } finally {

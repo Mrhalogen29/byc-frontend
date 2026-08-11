@@ -11,3 +11,13 @@ export const getSingleProduct = async (id) => {
 
   return response.data;
 };
+
+export const createProduct = async (formData) => {
+  const response = await api.post("/product", formData, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  });
+
+  return response.data;
+};
